@@ -1,0 +1,15 @@
+<!--
+Description:    A Lightning component that implements the lightning:isUrlAddressable interface, 
+				which enables the component to be navigated directly via URL. 
+
+Attributes:     sVarRecordId – The SF ID for Customer record input parameter
+                sVarWorkflowId – Unique ID for the Money Transfer Servicing Workflow input parameter
+-->
+<aura:component implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes" >
+    <aura:attribute name="sVarRecordId" type="Id" default="{!v.pageReference.state.c__sVarRecordId}" />
+    <aura:attribute name="sVarWorkflowId" type="String" default="{!v.pageReference.state.c__sVarWorkflowId}" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="slds-box slds-theme_default">
+            <lightning:flow aura:id="flowData"/>
+    </div>
+</aura:component>

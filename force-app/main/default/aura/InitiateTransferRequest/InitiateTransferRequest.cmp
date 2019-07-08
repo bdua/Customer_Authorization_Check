@@ -1,0 +1,14 @@
+<!--
+Description:    Quick Action on Customer details screen to launch the Flow in SubTab. 
+
+Attributes:     recordId – The SF ID for Customer record
+                workflowId – Unique ID for the Wire Money Servicing Workflow
+
+Event Handlers: None
+-->
+<aura:component implements="force:hasRecordId,force:lightningQuickActionWithoutHeader" >
+    <aura:attribute name="recordId" type="Id" default= "{!v.recordId}" />
+    <aura:attribute name="workflowId" type="String" default="999999999" />    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:workspaceAPI aura:id="workspace" />
+</aura:component>
